@@ -1,6 +1,6 @@
 <script>
-  import router from 'page';
-  import routes from './routes';
+  import router from "page";
+  import routes from "./routes";
 
   // Variables
   let page;
@@ -18,13 +18,14 @@
       (ctx, next) => {
         params = ctx.params;
         next();
+        // console.log(ctx);
       },
 
       // Check if auth is valid. If so, set the page to the component
       // otherwise redirect to login.
       () => {
         if (route.auth && !user) {
-          router.redirect('/login');
+          router.redirect("/login");
         } else {
           page = route.component;
         }
@@ -44,5 +45,5 @@
 </nav>
 
 <main>
-  <svelte:component this="{page}" params="{params}" />
+  <svelte:component this={page} {params} />
 </main>

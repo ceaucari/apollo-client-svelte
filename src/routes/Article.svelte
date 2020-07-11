@@ -1,9 +1,9 @@
 <script>
-  import { onMount } from 'svelte';
+  import { onMount } from "svelte";
 
   export let params;
 
-  const apiUrl = 'https://jsonplaceholder.typicode.com/posts/';
+  const apiUrl = "https://jsonplaceholder.typicode.com/posts/";
   let data = [];
 
   onMount(async () => {
